@@ -12,8 +12,8 @@ with open("Day5.txt") as file:
 
 for string in strings: 
   #print(string) 
-  if re.search(r"(\w{2})\1", string):
-    if re.search(r"(\w)\w\1", string):
+  if len(re.findall(r"(\w{2}).*\1", string)) > 0:
+    if len(re.findall(r"(\w)\w\1", string)) > 0:
       nice += 1
 
 print(nice)
